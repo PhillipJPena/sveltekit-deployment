@@ -1,3 +1,4 @@
+import { dev } from '$app/environment';
 import adapter from '@sveltejs/adapter-static';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -7,6 +8,6 @@ const config = {
 	}
 };
 
-config.paths = { base: process.argv.includes('dev') ? '' : process.env.BASE_PATH }
+config.paths = { base: dev ? '' : process.env.BASE_PATH }
 
 export default config;
